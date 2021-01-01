@@ -1,0 +1,66 @@
+{
+    "name": "templator",
+    "publisher": "trungnt2910",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/trungnt2910/templator"
+    },
+    "displayName": "Templator",
+    "description": "Instantiates class and function templates",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.52.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:templator.insertTemplate",
+        "onCommand:templator.editTemplates",
+        "onCommand:templator.addTemplate",
+        "onCommand:templator.reloadDatabase"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "templator.insertTemplate",
+                "title": "Templator: Instantiate and insert a Template"
+            },
+            {
+                "command": "templator.editTemplates",
+                "title": "Templator: Edit Template database"
+            },
+            {
+                "command": "templator.addTemplate",
+                "title": "Templator: Add a Template"
+            },
+            {
+                "command": "templator.reloadDatabase",
+                "title": "Templator: Reload Template database"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/glob": "^7.1.3",
+        "@types/mocha": "^8.0.4",
+        "@types/node": "^12.11.7",
+        "@types/vscode": "^1.52.0",
+        "@typescript-eslint/eslint-plugin": "^4.9.0",
+        "@typescript-eslint/parser": "^4.9.0",
+        "eslint": "^7.15.0",
+        "glob": "^7.1.6",
+        "mocha": "^8.1.3",
+        "typescript": "^4.1.2",
+        "vscode-test": "^1.4.1"
+    },
+    "license": "MIT"
+}

@@ -1,0 +1,16 @@
+{
+	"Libraries.Math.GCD": {
+		"args": [
+			"IntType"
+		],
+		"code": "public static IntType GCD(!@#IntType a, !@#IntType b) {if (b) return GCD(b, a % b); else return a;}"
+	},
+	"Libraries.Math.ModInt": {
+		"args": [
+			"Name",
+			"IntType",
+			"ModValue"
+		],
+		"code": "public class !@#Name : !@#IntType\r\n{\r\n\tprivate static readonly mod = !@#ModValue;\r\n\tprivate !@#IntType val;\r\n\tpublic !@#IntType Value \r\n\t{\r\n\t\tget {return val;}\r\n\t\tset {val = value % mod; if (val < 0) val += mod;}\r\n\t}\r\n\t!@#Name(!@#IntType i) {val = i % mod; if (val < 0) val += mod;}\r\n\t!@#Name operator+(!@#Name a, !@#Name b) {!@#Name result; result.val = a.val + b.val; if (result.val >= mod) result.val -= mod; return result;}\r\n\t!@#Name operator-(!@#Name a, !@#Name b) {!@#Name result; result.val = a.val - b.val; if (result.val < 0) result.val += mod; return result;}\r\n\t!@#Name operator*(!@#Name a, !@#Name b) {!@#Name result; result.val = (a.val * b.val) % mod; return result;}\r\n}\r\n"
+	}
+}
